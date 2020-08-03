@@ -1,15 +1,15 @@
 
-import MapEditer from './src/components/MapEditer';
+import GridEditer from './src/components/GridEditer';
 import _Vue from 'vue';
 // 这一步判断window.Vue是否存在，因为直接引用vue.min.js， 它会把Vue绑到Window上，我们直接引用打包好的js才能正常跑起来。
 if (typeof window !== 'undefined' && window.Vue) {
-window.Vue.component('map-editer', MapEditer)
+window.Vue.component('grid-editer', GridEditer)
 }
 //这样就可以使用Vue.use进行全局安装了。
-MapEditer.install = function(Vue){
+GridEditer.install = function(Vue){
   if (!Vue) {
     window.Vue = Vue = _Vue
     }
-Vue.component(MapEditer.name, MapEditer)
+Vue.component(GridEditer.name, GridEditer)
 }
-export default MapEditer
+export default GridEditer
